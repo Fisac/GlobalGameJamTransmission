@@ -6,7 +6,7 @@ public class EnergyLoot : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerEnergyInventory>().EnergyAmount++;
+            collision.gameObject.GetComponent<PlayerEnergyInventory>().EnergyAmount += 50;
             Destroy(gameObject);
         }
     }

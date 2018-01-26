@@ -43,12 +43,12 @@ public class PlayerEnergyInventory : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if(other.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            int energyGain = other.GetComponent<PlayerEnergyInventory>().EnergyAmount + EnergyAmount;
-            other.GetComponent<PlayerEnergyInventory>().EnergyAmount = 0;
+            int energyGain = collision.gameObject.GetComponent<PlayerEnergyInventory>().EnergyAmount + EnergyAmount;
+            collision.gameObject.GetComponent<PlayerEnergyInventory>().EnergyAmount = 0;
             energyAmount = 0;
             GameObject.Find("GameManager").GetComponent<PlayerEnergyController>().Energy += energyGain;
         }

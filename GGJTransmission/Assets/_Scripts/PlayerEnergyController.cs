@@ -19,6 +19,10 @@ public class PlayerEnergyController : MonoBehaviour
         set
         {
             energy = value;
+            if(energy > maxEnergy)
+            {
+                energy = maxEnergy;
+            }
             UpdateBar();
         }
     }
