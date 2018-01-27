@@ -9,6 +9,11 @@ public class PlayerEnergyController : MonoBehaviour
     public Transform player1, player2;
 
     public Image Fg;
+    public Light energyDirectionalLight;
+    private Color energyColor;
+    private float red = 0f;
+    private float green = 200f;
+    private float energyPercent;
 
     public float Energy
     {
@@ -40,6 +45,15 @@ public class PlayerEnergyController : MonoBehaviour
 
     void UpdateBar()
     {
-        Fg.fillAmount = energy / maxEnergy;
+        energyPercent = energy / maxEnergy;
+        Fg.fillAmount = energyPercent;
+        red = (255 - (255 * energyPercent)) / 255f;
+        green = (255 * (energyPercent)) / 255f;
+        if (green < 0f)
+            green = 0f;
+        if (red > 1f)
+            red = 1f;
+        energyColor = new Color(red, green, 0f);
+        energyDirectionalLight.color = energyColor;
     }
 }
