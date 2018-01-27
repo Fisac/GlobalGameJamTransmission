@@ -34,7 +34,7 @@ public class PlayerEnergyController : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("EnergyDecline", 1, 1);
+        InvokeRepeating("EnergyDecline", 4, 1);
         Energy = maxEnergy;
     }
 
