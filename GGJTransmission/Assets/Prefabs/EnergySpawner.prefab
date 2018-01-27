@@ -55,5 +55,6 @@ MonoBehaviour:
   spawnRatio: 2
   minSpeed: 100
   maxSpeed: 200
-  blueEnergy: {fileID: 0}
-  yellowEnergy: {fileID: 0}
+  blueEnergy: {fileID: 1551850279634632, guid: 8cd575b951bb12f4cb3a02db85fa57ec, type: 2}
+  yellowEnergy: {fileID: 1863756353359696, guid: 5e18edf2186114b4c87d79d61bc22c8c,
+    type: 2}
