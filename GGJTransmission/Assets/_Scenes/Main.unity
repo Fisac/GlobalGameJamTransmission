@@ -424,6 +424,18 @@ Prefab:
       propertyPath: gameOverUI
       value: 
       objectReference: {fileID: 450465487}
+    - target: {fileID: 114902684286007964, guid: 473d9745db46f2e4a94085cced021e5d,
+        type: 2}
+      propertyPath: yellowDeath
+      value: 
+      objectReference: {fileID: 1363654880927492, guid: 8245e0f8ae7dfe84a82927a19cce4af0,
+        type: 2}
+    - target: {fileID: 114902684286007964, guid: 473d9745db46f2e4a94085cced021e5d,
+        type: 2}
+      propertyPath: blueDeath
+      value: 
+      objectReference: {fileID: 1518228245762286, guid: 359122ccbf9ec94408b8ffad4d7a29cc,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 473d9745db46f2e4a94085cced021e5d, type: 2}
   m_IsPrefabParent: 0
