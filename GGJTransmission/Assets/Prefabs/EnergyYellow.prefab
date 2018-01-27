@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 23955771825301684}
   - component: {fileID: 114485446715461314}
   - component: {fileID: 54166620284173036}
+  - component: {fileID: 114395348110936556}
   m_Layer: 11
   m_Name: EnergyYellow
   m_TagString: Untagged
@@ -209,6 +210,17 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114395348110936556
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1863756353359696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87dcaf1a912097443a18a80dd55f6d47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114485446715461314
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -44,7 +44,7 @@ public class ObstacleSpawner : MonoBehaviour {
         if(obstacle != null) {
             rb = spawned.GetComponent<Rigidbody>();
             rb.AddTorque(randomRot);
-            rb.AddForce(Random.Range(-10, 10), randSpeed, 0);
+            rb.AddForce(Random.Range(-400, 400), randSpeed, 0);
             spawned.transform.localScale = new Vector3(randScale, randScale, randScale);
         }
     }

@@ -5,8 +5,8 @@ using UnityEngine;
 public class Despawner : MonoBehaviour {
 	
 	void Update () {
-	    if(transform.position.y <= -15 || transform.position.x <= -25 || transform.position.x >= 25) {
+        if (transform.position.y <= -30 || transform.position.y >= 35 || transform.position.x <= -25 || transform.position.x >= 25) {
             Destroy(this.gameObject);
         }
-	}
+    }
 }
