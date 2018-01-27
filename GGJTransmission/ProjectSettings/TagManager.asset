@@ -3,9 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags:
   - Obstacle
   - Wall
+=======
+  tags: []
+>>>>>>> parent of bae0384... Added particles
   layers:
   - Default
   - TransparentFX
