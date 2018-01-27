@@ -64,6 +64,7 @@ public class PlayerEnergyInventory : MonoBehaviour
         }
     }
 
+
     bool go = true;
 
     IEnumerator EnergyTransfer()
