@@ -14,6 +14,8 @@ public class ObstacleSpawner : MonoBehaviour {
     private float randScale;
 
     [SerializeField] private GameObject obstacle;
+    private GameObject spawned;
+
     private Transform tf;
     private Rigidbody rb;
     private Vector3 randomRot;
@@ -28,6 +30,7 @@ public class ObstacleSpawner : MonoBehaviour {
     }
 
     void spawner() {
+
         rotFloat = Random.Range(-100f, 100f);
         randSpeed = Random.Range(minSpeed, maxSpeed) * -1;
         randScale = Random.Range(90, 100);
@@ -35,14 +38,14 @@ public class ObstacleSpawner : MonoBehaviour {
         randomRot = new Vector3(rotFloat, rotFloat, rotFloat);
 
         if(obstacle != null)
-            obstacle = Instantiate(obstacle, new Vector3(
+            spawned = Instantiate(obstacle, new Vector3(
                 Random.Range(transform.position.x, spawnWidth), transform.position.y, 0), Quaternion.Euler(200, 1, 1));
 
         if(obstacle != null) {
-            rb = obstacle.GetComponent<Rigidbody>();
+            rb = spawned.GetComponent<Rigidbody>();
             rb.AddTorque(randomRot);
             rb.AddForce(Random.Range(-10, 10), randSpeed, 0);
-            obstacle.transform.localScale = new Vector3(randScale, randScale, randScale);
+            spawned.transform.localScale = new Vector3(randScale, randScale, randScale);
         }
     }
 }
