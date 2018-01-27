@@ -34,6 +34,8 @@ public class PlayerEnergyController : MonoBehaviour
                 Destroy(player2.gameObject);
                 GetComponent<GameManager>().SetState(GameManager.State.GameOver);
             }
+
+
             UpdateBar();
         }
     }
@@ -45,12 +47,12 @@ public class PlayerEnergyController : MonoBehaviour
 
     public void StartEnergyDecline()
     {
-        InvokeRepeating("EnergyDecline", 1f, 1f);
+        InvokeRepeating("EnergyDecline", 1f, .1f);
     }
 
     private void EnergyDecline()
     {
-        Energy -= (Vector2.Distance(player1.position, player2.position) / 5) + 1;
+        Energy -= (Vector2.Distance(player1.position, player2.position) / 50f) + 0.01f;
     }
 
     void UpdateBar()
