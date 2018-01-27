@@ -6,9 +6,10 @@ public class PlayerController : MonoBehaviour {
 
     public string horizontalJoystick;
     public string verticalJoystick;
-    private float moveSpeed = 10f;
+    private float moveSpeed = 5f;
     public GameObject hitWall;
     private bool hitWallCD;
+    private bool dashCD;
 
     private Rigidbody rb;
 
@@ -32,12 +33,29 @@ public class PlayerController : MonoBehaviour {
 
         Vector3 dir = new Vector3(moveHorizontal, moveVertical, 0f);
 
-        transform.position += dir.normalized * moveSpeed * Time.fixedDeltaTime;
+        float dash = 1;
 
-        if (transform.position.x > 15f)
-            transform.position = new Vector3(15f, transform.position.y, 0f);
-        else if (transform.position.x < -15f)
-            transform.position = new Vector3(-15f, transform.position.y, 0f);
+        if (gameObject.name == "Player 1")
+        {
+            if (Input.GetKeyDown(KeyCode.Joystick1Button9))
+            {
+                dash = 5f;
+                dashCD = true;
+                Invoke("DashCooldown", 1f);
+            }
+        }
+
+        if (gameObject.name == "Player 2")
+        {
+            if (Input.GetKeyDown(KeyCode.Joystick1Button10))
+            {
+                dash = 5f;
+                dashCD = true;
+                Invoke("DashCooldown", 1f);
+            }
+        }
+
+        transform.position += dir.normalized * moveSpeed * dash * Time.fixedDeltaTime;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -57,5 +75,10 @@ public class PlayerController : MonoBehaviour {
     private void HitWallCooldown()
     {
         hitWallCD = false;
+    }
+
+    private void DashCooldown()
+    {
+        dashCD = false;
     }
 }
