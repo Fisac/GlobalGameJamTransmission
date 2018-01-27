@@ -21,6 +21,8 @@ public class CameraController : MonoBehaviour {
 
         if (orthoSize < 5f)
             orthoSize = 5f;
+        if (orthoSize > 11f)
+            orthoSize = 11f;
 
         Camera.main.orthographicSize = orthoSize;
 

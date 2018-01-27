@@ -28,6 +28,12 @@ public class PlayerEnergyController : MonoBehaviour
             {
                 energy = maxEnergy;
             }
+            else if (energy < 0f)
+            {
+                Destroy(player1.gameObject);
+                Destroy(player2.gameObject);
+                GetComponent<GameManager>().SetState(GameManager.State.GameOver);
+            }
             UpdateBar();
         }
     }
