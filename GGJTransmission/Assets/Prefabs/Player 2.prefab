@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4175104783320668}
   - component: {fileID: 212758848664259110}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerChar2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,9 +39,9 @@ GameObject:
   - component: {fileID: 65008701653054392}
   - component: {fileID: 23431941087917682}
   - component: {fileID: 114714577635189892}
-  - component: {fileID: 54404594407021544}
   - component: {fileID: 114508021147902668}
-  m_Layer: 0
+  - component: {fileID: 54917957146739214}
+  m_Layer: 8
   m_Name: Player 2
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ MeshFilter:
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &54917957146739214
 Rigidbody:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1925806311353158}
@@ -158,6 +158,8 @@ MonoBehaviour:
     type: 2}
   mergeEffect: {fileID: 1559533202147852, guid: 1fbc44ee1ad8c9b428c82efa50dd3dab,
     type: 2}
+  player2: {fileID: 0}
+  player1: {fileID: 0}
 --- !u!114 &114714577635189892
 MonoBehaviour:
   m_ObjectHideFlags: 1

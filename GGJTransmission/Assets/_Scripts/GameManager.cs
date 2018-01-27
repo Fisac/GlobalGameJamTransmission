@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour {
     private State state;
 
     public Transform mainMenuUI, gameOverUI, uiBackground;
-    //public PlayerSpawner playerSpawner;
-    //public ObstacleSpawner obstacleSpawner;
+    public PlayerSpawner playerSpawner;
+    public ObstacleSpawner obstacleSpawner;
 
     public void SetState(State newState)
     {
@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour {
 
     private void Start()
     {
+        playerSpawner = GetComponent<PlayerSpawner>();
+        obstacleSpawner = GameObject.Find("ObstacleSpawner").GetComponent<ObstacleSpawner>();
+        obstacleSpawner.gameObject.SetActive(false);
         SetState(State.MainMenu);
     }
 
@@ -37,7 +40,8 @@ public class GameManager : MonoBehaviour {
 
     private void OnPlay()
     {
-        //playerSpawner.Spawn();
+        playerSpawner.SpawnPlayers();
+        obstacleSpawner.gameObject.SetActive(true);
         uiBackground.gameObject.SetActive(false);
         mainMenuUI.gameObject.SetActive(false);
         gameOverUI.gameObject.SetActive(false);
