@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnWidth: 20
-  spawnRatio: 1
+  spawnRatio: 0.6
   minSpeed: 100
   maxSpeed: 200
   blueEnergy: {fileID: 1551850279634632, guid: 8cd575b951bb12f4cb3a02db85fa57ec, type: 2}
