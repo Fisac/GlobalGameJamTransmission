@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 199549852027554210}
   - component: {fileID: 114713399841818028}
   m_Layer: 0
-  m_Name: MergeEffect
+  m_Name: MergeEnergyEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

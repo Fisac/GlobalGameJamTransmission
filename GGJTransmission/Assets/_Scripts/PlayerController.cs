@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour {
     public string horizontalJoystick;
     public string verticalJoystick;
     private float moveSpeed = 10f;
+    public GameObject hitWall;
+    private bool hitWallCD;
 
     private void FixedUpdate()
     {
@@ -21,5 +23,24 @@ public class PlayerController : MonoBehaviour {
             transform.position = new Vector3(15f, transform.position.y, 0f);
         else if (transform.position.x < -15f)
             transform.position = new Vector3(-15f, transform.position.y, 0f);
-    }   
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag == "Wall")
+        {
+            if (!hitWallCD)
+            {
+                GameObject newHitWall = Instantiate(hitWall, transform.position, Quaternion.identity);
+                Destroy(newHitWall, 1f);
+                hitWallCD = true;
+                Invoke("HitWallCooldown", .25f);
+            }
+        }
+    }
+
+    private void HitWallCooldown()
+    {
+        hitWallCD = false;
+    }
 }

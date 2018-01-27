@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour {
 
     public Transform player1, player2;
     private float distBetweenPlayers, orthoSize;
+    private Vector3 target;
 
     private void LateUpdate()
     {
@@ -13,9 +14,13 @@ public class CameraController : MonoBehaviour {
 
         orthoSize = distBetweenPlayers / 1.5f;
 
-        if (orthoSize < 3f)
-            orthoSize = 3f;
+        if (orthoSize < 5f)
+            orthoSize = 5f;
 
         Camera.main.orthographicSize = orthoSize;
+
+        target = (player1.position + player2.position) * .5f;
+
+        transform.position = target + new Vector3(0f, 0f, -10f);
     }
 }
