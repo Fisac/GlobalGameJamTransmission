@@ -1,0 +1,52 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameManager : MonoBehaviour {
+
+	public enum State { MainMenu, Play, GameOver }
+    private State state;
+
+    public Transform mainMenuUI, gameOverUI, uiBackground;
+    //public PlayerSpawner playerSpawner;
+    //public ObstacleSpawner obstacleSpawner;
+
+    public void SetState(State newState)
+    {
+        if (newState == State.MainMenu)
+            OnMainMenu();
+        else if (newState == State.Play)
+            OnPlay();
+        else if (newState == State.GameOver)
+            OnGameOver();
+
+        state = newState;
+    }
+
+    private void Start()
+    {
+        SetState(State.MainMenu);
+    }
+
+    private void OnMainMenu()
+    {
+        uiBackground.gameObject.SetActive(true);
+        mainMenuUI.gameObject.SetActive(true);
+        gameOverUI.gameObject.SetActive(false);
+    }
+
+    private void OnPlay()
+    {
+        //playerSpawner.Spawn();
+        uiBackground.gameObject.SetActive(false);
+        mainMenuUI.gameObject.SetActive(false);
+        gameOverUI.gameObject.SetActive(false);
+    }
+
+    private void OnGameOver()
+    {
+        uiBackground.gameObject.SetActive(true);
+        mainMenuUI.gameObject.SetActive(false);
+        gameOverUI.gameObject.SetActive(true);
+    }
+}
