@@ -20,5 +20,10 @@ public class Obstacle : MonoBehaviour {
             Instantiate(particles, new Vector3(
                 collision.contacts[0].point.x, collision.contacts[0].point.y, collision.contacts[0].point.z), Quaternion.Euler(0,0,0));
         }
+
+        if (collision.gameObject.tag == "Player") {
+            GameObject.Find("GameManager").GetComponent<PlayerEnergyController>().Energy -= 10;
+            Destroy(this.gameObject);
+        }
     }
 }
