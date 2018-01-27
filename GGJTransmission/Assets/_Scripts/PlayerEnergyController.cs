@@ -8,6 +8,8 @@ public class PlayerEnergyController : MonoBehaviour
 
     public Transform player1, player2;
 
+    public GameObject yellowDeath, blueDeath;
+
     public Image Fg;
     public Light energyDirectionalLight;
     private Color energyColor;
@@ -24,7 +26,7 @@ public class PlayerEnergyController : MonoBehaviour
         set
         {
             energy = value;
-            if(energy > maxEnergy)
+            if (energy > maxEnergy)
             {
                 energy = maxEnergy;
             }
@@ -32,12 +34,18 @@ public class PlayerEnergyController : MonoBehaviour
             {
                 Destroy(player1.gameObject);
                 Destroy(player2.gameObject);
-                GetComponent<GameManager>().SetState(GameManager.State.GameOver);
+                Invoke("GameOver", 3);
+                Instantiate(yellowDeath, player1.position, Quaternion.identity);
+                Instantiate(blueDeath, player2.position, Quaternion.identity);
             }
-
 
             UpdateBar();
         }
+    }
+
+    void GameOver()
+    {
+        GetComponent<GameManager>().SetState(GameManager.State.GameOver);
     }
 
     private void Start()
