@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: NaN, g: NaN, b: NaN, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -130,6 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyParticle: {fileID: 1324196725956330, guid: 3fc75e3625cbe3a489d58969f4f05be2,
+    type: 2}
+  mergeEffect: {fileID: 1559533202147852, guid: 1fbc44ee1ad8c9b428c82efa50dd3dab,
     type: 2}
 --- !u!54 &329282516
 Rigidbody:
@@ -814,6 +816,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyParticle: {fileID: 1324196725956330, guid: 3fc75e3625cbe3a489d58969f4f05be2,
+    type: 2}
+  mergeEffect: {fileID: 1559533202147852, guid: 1fbc44ee1ad8c9b428c82efa50dd3dab,
     type: 2}
 --- !u!54 &2140615447
 Rigidbody:
