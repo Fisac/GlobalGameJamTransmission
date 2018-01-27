@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4437846612999744}
   - component: {fileID: 108957603296500312}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4523087541640742}
   - component: {fileID: 198075759892923946}
   - component: {fileID: 199839167287987228}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 23955771825301684}
   - component: {fileID: 114485446715461314}
   - component: {fileID: 54166620284173036}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: EnergyYellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3639,7 +3639,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 2100000, guid: c926b92ec2cce014f98781ce9746383b, type: 2}
+  - {fileID: 2100000, guid: 03b82ad3a64f84a4992dedc4b56b92c4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

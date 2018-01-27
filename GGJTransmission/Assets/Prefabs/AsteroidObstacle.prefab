@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 54830759969241566}
   - component: {fileID: 114516113600465600}
   - component: {fileID: 65592477332411346}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: AsteroidObstacle
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6b04916b9aee71a41afea4e5f07a869f, type: 2}
+  - {fileID: 2100000, guid: 8b187413d2559a34f80674c9118cfe1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -123,4 +123,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87dcaf1a912097443a18a80dd55f6d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particles: {fileID: 1545761932002876, guid: 0b348b606037f1545b834a81f22d56c8, type: 2}
