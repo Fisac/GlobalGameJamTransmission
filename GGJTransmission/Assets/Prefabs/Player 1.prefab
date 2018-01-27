@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1124828946220472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.01, y: 0.04, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4108301104298522}
@@ -156,8 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalJoystick: HorizontalJoystick1
   verticalJoystick: VerticalJoystick1
-  hitWall: {fileID: 1426921499379540, guid: f91c85124932e844da2f60bdc2dc2ac8, type: 2}
---- !u!114 &114234618017604454
+--- !u!114 &114901775391010700
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -172,6 +171,8 @@ MonoBehaviour:
     type: 2}
   mergeEffect: {fileID: 1559533202147852, guid: 1fbc44ee1ad8c9b428c82efa50dd3dab,
     type: 2}
+  player2: {fileID: 0}
+  player1: {fileID: 0}
 --- !u!212 &212707088818236822
 SpriteRenderer:
   m_ObjectHideFlags: 1

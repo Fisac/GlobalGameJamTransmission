@@ -10,6 +10,11 @@ public class CameraController : MonoBehaviour {
 
     private void LateUpdate()
     {
+        if(player1 == null || player2 == null)
+        {
+            return;
+        }
+
         distBetweenPlayers = (Mathf.Abs(Vector3.Distance(player1.position, player2.position)));
 
         orthoSize = distBetweenPlayers / 1.5f;

@@ -10,6 +10,21 @@ public class PlayerController : MonoBehaviour {
     public GameObject hitWall;
     private bool hitWallCD;
 
+    private Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    private void Update()
+    {
+        if(rb.IsSleeping ())
+        {
+            rb.WakeUp();
+        }
+    }
+
     private void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis(horizontalJoystick);
