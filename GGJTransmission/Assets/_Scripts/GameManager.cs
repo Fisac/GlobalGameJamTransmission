@@ -40,6 +40,9 @@ public class GameManager : MonoBehaviour {
 
     private void OnPlay()
     {
+        if (state == State.Play)
+            return;
+
         playerSpawner.SpawnPlayers();
         obstacleSpawner.gameObject.SetActive(true);
         GetComponent<PlayerEnergyController>().StartEnergyDecline();
@@ -53,5 +56,10 @@ public class GameManager : MonoBehaviour {
         uiBackground.gameObject.SetActive(true);
         mainMenuUI.gameObject.SetActive(false);
         gameOverUI.gameObject.SetActive(true);
+    }
+
+    public string GetState()
+    {
+        return state.ToString();
     }
 }

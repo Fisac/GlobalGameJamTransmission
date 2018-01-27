@@ -12,6 +12,7 @@ public class PlayerEnergyInventory : MonoBehaviour
 
     public GameObject energyParticle, mergeEffect;
     public GameObject player2, player1;
+    public Transform[] energyHolder;
 
     public int EnergyAmount
     {
@@ -40,10 +41,21 @@ public class PlayerEnergyInventory : MonoBehaviour
         gm = GameObject.Find("GameManager").transform;
     }
 
+    public Transform AddEnergyObject()
+    {
+        foreach (Transform item in energyHolder)
+        {
+            if (item.childCount == 0)
+                return item;
+        }
+        return null;
+
+    }
+
     void energyIncreased()
     {
-        GameObject particle = Instantiate(energyParticle, transform.position, Quaternion.identity, transform);
-        energyParticles.Add(particle);
+        //GameObject particle = Instantiate(energyParticle, transform.position, Quaternion.identity, transform);
+        //energyParticles.Add(particle);
     }
 
     void energyDump()
@@ -51,6 +63,11 @@ public class PlayerEnergyInventory : MonoBehaviour
         foreach (GameObject g in energyParticles)
         {
             Destroy(g);
+        }
+
+        foreach (Transform item in energyHolder)
+        {
+            Destroy(item.GetChild(0).gameObject);
         }
     }
 

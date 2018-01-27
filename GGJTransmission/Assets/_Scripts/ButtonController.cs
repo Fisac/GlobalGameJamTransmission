@@ -26,4 +26,13 @@ public class ButtonController : MonoBehaviour {
     {
         SceneManager.LoadScene(0);
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Joystick1Button7))
+        {
+            if (gm.GetState() == "MainMenu")
+                gm.SetState(GameManager.State.Play);
+        }
+    }
 }
