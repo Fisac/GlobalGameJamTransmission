@@ -43,7 +43,7 @@ public class EnergySpawner : MonoBehaviour {
 
             rb = obstacle.GetComponent<Rigidbody>();
 
-            rb.AddForce(Random.Range(-400, 400), randSpeed, 0);
+            rb.AddForce(Random.Range(-200, 200), randSpeed, 0);
         }
     }
 }

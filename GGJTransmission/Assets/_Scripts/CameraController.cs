@@ -4,30 +4,27 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
-    public Transform player1, player2;
-    private float distBetweenPlayers, orthoSize;
-    private Vector3 target;
+    private float shake = 0;
+    private float shakeAmount = .05f;
+    private float decreaseFactor = 5f;
 
-    private void LateUpdate()
-    {
-        if(player1 == null || player2 == null)
-        {
-            return;
+    private void Update() {
+        if (shake > 0) {
+            transform.localPosition = transform.position + Random.insideUnitSphere * shakeAmount;
+            shake -= Time.deltaTime * decreaseFactor;
         }
 
-        distBetweenPlayers = (Mathf.Abs(Vector3.Distance(player1.position, player2.position)));
+        if(shake <= 0) {
+            transform.position = new Vector3(0, 0, -10);
+        }
+    }
 
-        orthoSize = distBetweenPlayers / 1.5f;
+    public void Shake(float time) {
+        shake = time;
+    }
 
-        if (orthoSize < 5f)
-            orthoSize = 5f;
-        if (orthoSize > 11f)
-            orthoSize = 11f;
-
-        Camera.main.orthographicSize = orthoSize;
-
-        target = (player1.position + player2.position) * .5f;
-
-        transform.position = target + new Vector3(0f, 0f, -10f);
+    public void Shake(float time, float amount) {
+        shake = time;
+        shakeAmount = amount;
     }
 }
