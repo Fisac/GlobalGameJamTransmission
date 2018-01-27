@@ -6,11 +6,6 @@ public class PlayerSpawner : MonoBehaviour {
 
     public GameObject player1, player2;
 
-    private void Start()
-    {
-        Invoke("SpawnPlayers", 3);
-    }
-
     public void SpawnPlayers()
     {
         GameObject p1 = Instantiate(player1, new Vector3(5, 0, 0), Quaternion.identity);

@@ -34,11 +34,15 @@ public class PlayerEnergyController : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("EnergyDecline", 4, 1);
         Energy = maxEnergy;
     }
 
-    void EnergyDecline()
+    public void StartEnergyDecline()
+    {
+        InvokeRepeating("EnergyDecline", 1f, 1f);
+    }
+
+    private void EnergyDecline()
     {
         Energy -= (Vector2.Distance(player1.position, player2.position) / 5) + 1;
     }
