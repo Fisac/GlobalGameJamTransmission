@@ -47,7 +47,11 @@ public class PlayerEnergyController : MonoBehaviour
 
     public void StartEnergyDecline()
     {
+<<<<<<< HEAD
         InvokeRepeating("EnergyDecline", 1f, .1f);
+=======
+        InvokeRepeating("EnergyDecline", 1f, 1f);
+>>>>>>> aosuhf
     }
 
     private void EnergyDecline()

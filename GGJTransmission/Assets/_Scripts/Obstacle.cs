@@ -10,7 +10,11 @@ public class Obstacle : MonoBehaviour {
     }
 
     void Update () {
+<<<<<<< HEAD
 	    if(transform.position.y <= -30 || transform.position.y >= 35 || transform.position.x <= -25 || transform.position.x >= 25) {
+=======
+	    if(transform.position.y <= -15 || transform.position.y >= 15 || transform.position.x <= -25 || transform.position.x >= 25) {
+>>>>>>> aosuhf
             Destroy(this.gameObject);
         }
 	}
