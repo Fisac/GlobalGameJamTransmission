@@ -12,5 +12,4 @@ public class MusicManager : MonoBehaviour {
 		float fl;
 		mAudioMixer.GetFloat("MusicVolume", out fl);
 	}
-
 }
