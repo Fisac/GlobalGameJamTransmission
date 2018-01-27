@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject hitWall;
     private bool hitWallCD;
     private bool dashCD;
+    private Vector3 dir;
 
     private Rigidbody rb;
 
@@ -31,31 +32,9 @@ public class PlayerController : MonoBehaviour {
         float moveHorizontal = Input.GetAxis(horizontalJoystick);
         float moveVertical = Input.GetAxis(verticalJoystick);
 
-        Vector3 dir = new Vector3(moveHorizontal, moveVertical, 0f);
+        dir = new Vector3(moveHorizontal, moveVertical, 0f);        
 
-        float dash = 1;
-
-        if (gameObject.name == "Player 1")
-        {
-            if (Input.GetKeyDown(KeyCode.Joystick1Button9))
-            {
-                dash = 5f;
-                dashCD = true;
-                Invoke("DashCooldown", 1f);
-            }
-        }
-
-        if (gameObject.name == "Player 2")
-        {
-            if (Input.GetKeyDown(KeyCode.Joystick1Button10))
-            {
-                dash = 5f;
-                dashCD = true;
-                Invoke("DashCooldown", 1f);
-            }
-        }
-
-        transform.position += dir.normalized * moveSpeed * dash * Time.fixedDeltaTime;
+        transform.position += dir.normalized * moveSpeed * Time.fixedDeltaTime;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -72,9 +51,42 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    private void LateUpdate()
+    {
+        if (!dashCD)
+        {
+            if (gameObject.name == "Player 1")
+            {
+                if (Input.GetKeyDown(KeyCode.Joystick1Button4))
+                {
+                    moveSpeed = 20f;
+                    dashCD = true;
+                    Invoke("ResetMoveSpeed", .25f);
+                    Invoke("DashCooldown", 3f);
+                }
+            }
+
+            if (gameObject.name == "Player 2")
+            {
+                if (Input.GetKeyDown(KeyCode.Joystick1Button5))
+                {
+                    moveSpeed = 20f;
+                    dashCD = true;
+                    Invoke("ResetMoveSpeed", .25f);
+                    Invoke("DashCooldown", 3f);
+                }
+            }
+        }
+    }
+
     private void HitWallCooldown()
     {
         hitWallCD = false;
+    }
+
+    private void ResetMoveSpeed()
+    {
+        moveSpeed = 5f;
     }
 
     private void DashCooldown()
