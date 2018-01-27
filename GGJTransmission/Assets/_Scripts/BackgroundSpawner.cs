@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BackgroundSpawner : MonoBehaviour {
 
-    public int spawnRate;
     public float spawnWidth;
     private float timer;
     public float spawnRatio;
