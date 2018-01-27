@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7091fd107e950454fb45097b7ba5ff3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyParticle: {fileID: 1324196725956330, guid: 3fc75e3625cbe3a489d58969f4f05be2,
+  energyParticle: {fileID: 1152872297817200, guid: fbb44790cb7d9244e96d1a47b1dbf102,
     type: 2}
   mergeEffect: {fileID: 1559533202147852, guid: 1fbc44ee1ad8c9b428c82efa50dd3dab,
     type: 2}
