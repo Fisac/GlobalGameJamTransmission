@@ -152,6 +152,24 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 4737212233115336, guid: e915001a441459449bd61b84e9f58dae, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404539632443546, guid: e915001a441459449bd61b84e9f58dae, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -18
+      objectReference: {fileID: 0}
+    - target: {fileID: 65035466375872114, guid: e915001a441459449bd61b84e9f58dae,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 43.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 65536058420883286, guid: e915001a441459449bd61b84e9f58dae,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 42.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e915001a441459449bd61b84e9f58dae, type: 2}
   m_IsPrefabParent: 0
@@ -538,7 +556,7 @@ Transform:
   m_GameObject: {fileID: 1378426040}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 25.2}
-  m_LocalScale: {x: 5.8214393, y: 5.821439, z: 5.821439}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -602,7 +620,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4699493982037020, guid: 9c1428eb89b317049af98e7af2231174, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4699493982037020, guid: 9c1428eb89b317049af98e7af2231174, type: 2}
       propertyPath: m_LocalPosition.z
@@ -637,6 +655,16 @@ Prefab:
         type: 2}
       propertyPath: player2
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114086466296888290, guid: 9c1428eb89b317049af98e7af2231174,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20138488491292164, guid: 9c1428eb89b317049af98e7af2231174,
+        type: 2}
+      propertyPath: orthographic size
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9c1428eb89b317049af98e7af2231174, type: 2}
