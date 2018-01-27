@@ -8,8 +8,8 @@ public class PlayerSpawner : MonoBehaviour {
 
     public void SpawnPlayers()
     {
-        GameObject p1 = Instantiate(player1, new Vector3(5, 0, 0), Quaternion.identity);
-        GameObject p2 = Instantiate(player2, new Vector3(-5, 0, 0), Quaternion.identity);
+        GameObject p1 = Instantiate(player1, new Vector3(-5, 0, 0), Quaternion.identity);
+        GameObject p2 = Instantiate(player2, new Vector3(5, 0, 0), Quaternion.identity);
         GameObject.Find("GameManager").GetComponent<PlayerEnergyController>().player1 = p1.transform;
         GameObject.Find("GameManager").GetComponent<PlayerEnergyController>().player2 = p2.transform;
         GameObject.Find("Main Camera").GetComponent<CameraController> ().player1 = p1.transform;

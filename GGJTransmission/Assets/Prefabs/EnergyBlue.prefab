@@ -39,8 +39,8 @@ GameObject:
   - component: {fileID: 33484501337283558}
   - component: {fileID: 65035549007803442}
   - component: {fileID: 23546287905428130}
-  - component: {fileID: 114370679206648300}
   - component: {fileID: 54713782443542164}
+  - component: {fileID: 114390369901212520}
   m_Layer: 11
   m_Name: EnergyBlue
   m_TagString: Untagged
@@ -209,7 +209,7 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114370679206648300
+--- !u!114 &114390369901212520
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1551850279634632}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cf7b6fa33462744ea30af8005fed2c3, type: 3}
+  m_Script: {fileID: 11500000, guid: feba4c939012b8d45829e21e919c3adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!198 &198005962714904012
