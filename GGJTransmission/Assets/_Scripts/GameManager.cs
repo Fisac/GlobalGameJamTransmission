@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour {
     {
         playerSpawner.SpawnPlayers();
         obstacleSpawner.gameObject.SetActive(true);
+        GetComponent<PlayerEnergyController>().StartEnergyDecline();
         uiBackground.gameObject.SetActive(false);
         mainMenuUI.gameObject.SetActive(false);
         gameOverUI.gameObject.SetActive(false);
