@@ -22,6 +22,8 @@ public class ObstacleSpawner : MonoBehaviour {
 
     void Update() {
         timer += Time.deltaTime;
+        spawnRatio -= Time.deltaTime/250;
+
         if (timer >= spawnRatio) {
             spawner();
             timer = 0;

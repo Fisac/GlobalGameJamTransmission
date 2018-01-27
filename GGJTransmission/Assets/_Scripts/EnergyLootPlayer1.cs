@@ -6,13 +6,13 @@ public class EnergyLootPlayer1 : MonoBehaviour
     {
         if(collision.gameObject.name == "Player 1")
         {
-            collision.gameObject.GetComponent<PlayerEnergyInventory>().EnergyAmount += 50;
+            collision.gameObject.GetComponent<PlayerEnergyInventory>().EnergyAmount += 25;
             Destroy(gameObject);
         }
 
         else if (collision.gameObject.name == "Player 2")
         {
-            GameObject.Find("GameManager").GetComponent<PlayerEnergyController>().Energy -= 50;
+            GameObject.Find("GameManager").GetComponent<PlayerEnergyController>().Energy -= 25;
             Destroy(gameObject);
         }
     }

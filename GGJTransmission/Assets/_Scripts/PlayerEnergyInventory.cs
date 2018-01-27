@@ -58,15 +58,16 @@ public class PlayerEnergyInventory : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if(player1.GetComponent<PlayerEnergyInventory>().EnergyAmount > 0 || player2.GetComponent<PlayerEnergyInventory>().EnergyAmount > 0)
+            if(player1.GetComponent<PlayerEnergyInventory>().EnergyAmount > 50 && player2.GetComponent<PlayerEnergyInventory>().EnergyAmount > 50)
             {
                 energyDump();
                 StartCoroutine("EnergyTransfer");
+                int energyGain = collision.gameObject.GetComponent<PlayerEnergyInventory>().EnergyAmount + EnergyAmount;
+                collision.gameObject.GetComponent<PlayerEnergyInventory>().EnergyAmount = 0;
+                energyAmount = 0;
+                gm.GetComponent<PlayerEnergyController>().Energy += energyGain;
             }
-            int energyGain = collision.gameObject.GetComponent<PlayerEnergyInventory>().EnergyAmount + EnergyAmount;
-            collision.gameObject.GetComponent<PlayerEnergyInventory>().EnergyAmount = 0;
-            energyAmount = 0;
-            gm.GetComponent<PlayerEnergyController>().Energy += energyGain;
+
         }
     }
 

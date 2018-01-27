@@ -8,9 +8,12 @@ public class Obstacle : MonoBehaviour {
 
     private bool dir;
     private float randPulse;
+    private float randScale;
 
     private void Start() {
+        randScale = Random.Range(75, 150);
         randPulse = Random.Range(0.05f, 0.01f);
+
     }
 
     void Update () {
@@ -24,15 +27,15 @@ public class Obstacle : MonoBehaviour {
 
     void PickDir() {
         if (dir) {
-            transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(100, 100, 100), randPulse);
-            if (transform.localScale.x >= 95) {
+            transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(randScale, randScale, randScale), randPulse);
+            if (transform.localScale.x >= randScale-5) {
                 dir = false;
             }
         }
 
         if (!dir) {
-            transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(75, 75, 75), randPulse);
-            if (transform.localScale.x <= 80) {
+            transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(randScale-25, randScale-25, randScale-25), randPulse);
+            if (transform.localScale.x <= randScale-20) {
                 dir = true;
             }
         }
