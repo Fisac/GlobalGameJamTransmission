@@ -1,13 +1,16 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
-public class PlayerEnergyInventory : MonoBehaviour {
+public class PlayerEnergyInventory : MonoBehaviour
+{
 
     private int energyAmount;
 
     private List<GameObject> energyParticles = new List<GameObject>();
 
-    public GameObject energyParticle;
+    public GameObject energyParticle, mergeEffect;
+    private GameObject player2;
 
     public int EnergyAmount
     {
@@ -17,7 +20,7 @@ public class PlayerEnergyInventory : MonoBehaviour {
         }
         set
         {
-            if(value == 0)
+            if (value == 0)
             {
                 energyDump();
             }
@@ -29,6 +32,11 @@ public class PlayerEnergyInventory : MonoBehaviour {
         }
     }
 
+    private void Start()
+    {
+        player2 = GameObject.Find("Player 2");
+    }
+
     void energyIncreased()
     {
         GameObject particle = Instantiate(energyParticle, transform.position, Quaternion.identity, transform);
@@ -37,10 +45,12 @@ public class PlayerEnergyInventory : MonoBehaviour {
 
     void energyDump()
     {
-        foreach(GameObject g in energyParticles)
+        foreach (GameObject g in energyParticles)
         {
             Destroy(g);
         }
+
+        StartCoroutine("EnergyTransfer");
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -52,5 +62,31 @@ public class PlayerEnergyInventory : MonoBehaviour {
             energyAmount = 0;
             GameObject.Find("GameManager").GetComponent<PlayerEnergyController>().Energy += energyGain;
         }
+    }
+
+
+    bool go = true;
+
+    IEnumerator EnergyTransfer()
+    {
+        StartCoroutine("Timer");
+
+        if (gameObject.name == "Player 1")
+        {
+            GameObject merge = Instantiate(mergeEffect, ((transform.position + player2.transform.position) / 2), Quaternion.identity);
+        }
+
+        while (go == true)
+        {
+            Vector3 prevPos = transform.position;
+            yield return new WaitForEndOfFrame();
+            transform.position = prevPos;
+        }
+    }
+
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(3f);
+        go = false;
     }
 }

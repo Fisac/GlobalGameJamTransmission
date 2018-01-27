@@ -139,6 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalJoystick: HorizontalJoystick1
   verticalJoystick: VerticalJoystick1
+  hitWall: {fileID: 1426921499379540, guid: f91c85124932e844da2f60bdc2dc2ac8, type: 2}
 --- !u!212 &212707088818236822
 SpriteRenderer:
   m_ObjectHideFlags: 1
