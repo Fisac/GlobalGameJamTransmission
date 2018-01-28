@@ -26,18 +26,16 @@ public class PlayerEnergyInventory : MonoBehaviour
             {
                 energyDump();
             }
-            if (value > energyAmount)
-            {
-                energyIncreased();
-            }
             energyAmount = value;
+            if(EnergyAmount >= 75)
+            {
+                InvokeRepeating("Beam", 0f, .5f);
+            }
         }
     }
 
     private void Start()
     {
-        //player2 = GameObject.Find("Player 2");
-        //player1 = GameObject.Find("Player 1");
         gm = GameObject.Find("GameManager").transform;
     }
 
@@ -49,13 +47,11 @@ public class PlayerEnergyInventory : MonoBehaviour
                 return item;
         }
         return null;
-
     }
 
-    void energyIncreased()
+    public void Beam()
     {
-        //GameObject particle = Instantiate(energyParticle, transform.position, Quaternion.identity, transform);
-        //energyParticles.Add(particle);
+        GetComponent<BeamMaker>().SendParticle();
     }
 
     void energyDump()
@@ -69,6 +65,8 @@ public class PlayerEnergyInventory : MonoBehaviour
         {
             Destroy(item.GetChild(0).gameObject);
         }
+
+        CancelInvoke();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -83,8 +81,8 @@ public class PlayerEnergyInventory : MonoBehaviour
                 collision.gameObject.GetComponent<PlayerEnergyInventory>().EnergyAmount = 0;
                 energyAmount = 0;
                 gm.GetComponent<PlayerEnergyController>().Energy += energyGain;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().playEnergyTransfer();
             }
-
         }
     }
 
@@ -98,12 +96,7 @@ public class PlayerEnergyInventory : MonoBehaviour
             GameObject merge = Instantiate(mergeEffect, ((transform.position + player1.transform.position) / 2), Quaternion.identity);
         }
 
-        while (go == true)
-        {
-            Vector3 prevPos = transform.position;
-            yield return new WaitForEndOfFrame();
-            transform.position = prevPos;
-        }
+        yield return new WaitForEndOfFrame();
     }
 
     IEnumerator Timer()

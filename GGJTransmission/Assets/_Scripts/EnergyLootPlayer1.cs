@@ -6,7 +6,6 @@ public class EnergyLootPlayer1 : MonoBehaviour
     {
         if(other.name == "Player 1")
         {
-            other.GetComponent<PlayerEnergyInventory>().EnergyAmount += 25;
             if (other.GetComponent<PlayerEnergyInventory>().AddEnergyObject() != null)
             {
                 GetComponent<Rigidbody>().isKinematic = true;
@@ -15,6 +14,8 @@ public class EnergyLootPlayer1 : MonoBehaviour
                 transform.SetParent(other.GetComponent<PlayerEnergyInventory>().AddEnergyObject());
                 transform.GetChild(1).localScale = new Vector3(.2f, .2f, .2f);
                 transform.localPosition = Vector3.zero;
+                other.GetComponent<PlayerEnergyInventory>().EnergyAmount += 25;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().playEnergyPickup();
             }
         }
 

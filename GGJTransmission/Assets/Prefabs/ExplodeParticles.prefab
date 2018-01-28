@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 198285135396232574}
   - component: {fileID: 199298491518189364}
   - component: {fileID: 114932727006733476}
+  - component: {fileID: 114952301482918490}
   m_Layer: 0
   m_Name: ExplodeParticles
   m_TagString: Untagged
@@ -51,6 +52,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22a5c55c4f716274e9f5cc35d7083eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114952301482918490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1545761932002876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ffe5fd32b109414d9660f5cfdbe7fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!198 &198285135396232574

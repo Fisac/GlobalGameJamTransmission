@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour {
 
@@ -8,6 +7,8 @@ public class GameManager : MonoBehaviour {
     private State state;
 
     public Transform mainMenuUI, gameOverUI, uiBackground;
+    public GameObject[] firstSelectedButton;
+    private EventSystem eventSystem;
     public PlayerSpawner playerSpawner;
     public ObstacleSpawner obstacleSpawner;
 
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour {
 
     private void Start()
     {
+        eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
         playerSpawner = GetComponent<PlayerSpawner>();
         obstacleSpawner = GameObject.Find("ObstacleSpawner").GetComponent<ObstacleSpawner>();
         obstacleSpawner.gameObject.SetActive(false);
@@ -36,6 +38,7 @@ public class GameManager : MonoBehaviour {
         uiBackground.gameObject.SetActive(true);
         mainMenuUI.gameObject.SetActive(true);
         gameOverUI.gameObject.SetActive(false);
+        eventSystem.SetSelectedGameObject(firstSelectedButton[0]);
     }
 
     private void OnPlay()
@@ -56,6 +59,7 @@ public class GameManager : MonoBehaviour {
         uiBackground.gameObject.SetActive(true);
         mainMenuUI.gameObject.SetActive(false);
         gameOverUI.gameObject.SetActive(true);
+        eventSystem.SetSelectedGameObject(firstSelectedButton[1]);
     }
 
     public string GetState()

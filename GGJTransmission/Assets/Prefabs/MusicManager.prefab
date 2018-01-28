@@ -277,6 +277,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 0
     m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
@@ -358,6 +359,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 0
     m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
@@ -439,6 +441,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 0
     m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
@@ -464,6 +467,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 568d39615614341b1a60c7a212c0011f, type: 3}
   m_PlayOnAwake: 1
+  m_Volume: 0.294
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -520,6 +524,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 0
     m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
@@ -601,6 +606,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 0
     m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2

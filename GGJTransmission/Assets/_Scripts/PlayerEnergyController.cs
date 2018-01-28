@@ -17,6 +17,8 @@ public class PlayerEnergyController : MonoBehaviour
     private float green = 200f;
     private float energyPercent;
 
+    private MusicManager mm;
+
     public float Energy
     {
         get
@@ -37,6 +39,7 @@ public class PlayerEnergyController : MonoBehaviour
                 Invoke("GameOver", 3);
                 Instantiate(yellowDeath, player1.position, Quaternion.identity);
                 Instantiate(blueDeath, player2.position, Quaternion.identity);
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().playDie();
             }
 
             UpdateBar();
@@ -50,6 +53,7 @@ public class PlayerEnergyController : MonoBehaviour
 
     private void Start()
     {
+        mm = GameObject.Find("MusicManager").GetComponent<MusicManager>();
         Energy = maxEnergy;
     }
 
@@ -60,6 +64,9 @@ public class PlayerEnergyController : MonoBehaviour
 
     private void EnergyDecline()
     {
+        if (player1 == null || player2 == null)
+            return;
+
         Energy -= (Vector2.Distance(player1.position, player2.position) / 50f) + 0.01f;
     }
 
@@ -75,5 +82,6 @@ public class PlayerEnergyController : MonoBehaviour
             red = 1f;
         energyColor = new Color(red, green, 0f);
         energyDirectionalLight.color = energyColor;
+        mm.mIntensity = energyPercent;
     }
 }

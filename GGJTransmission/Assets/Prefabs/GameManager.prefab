@@ -69,6 +69,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 0}
   player2: {fileID: 0}
+  yellowDeath: {fileID: 1363654880927492, guid: 8245e0f8ae7dfe84a82927a19cce4af0,
+    type: 2}
+  blueDeath: {fileID: 1518228245762286, guid: 359122ccbf9ec94408b8ffad4d7a29cc, type: 2}
   Fg: {fileID: 0}
   energyDirectionalLight: {fileID: 0}
 --- !u!114 &114952508299795438
@@ -96,5 +99,8 @@ MonoBehaviour:
   mainMenuUI: {fileID: 0}
   gameOverUI: {fileID: 0}
   uiBackground: {fileID: 0}
+  firstSelectedButton:
+  - {fileID: 0}
+  - {fileID: 0}
   playerSpawner: {fileID: 0}
   obstacleSpawner: {fileID: 0}

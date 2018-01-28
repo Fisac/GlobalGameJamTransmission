@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4040910341067416}
   - component: {fileID: 198161804149390996}
   - component: {fileID: 199035195318163226}
+  - component: {fileID: 114146324479145502}
   m_Layer: 0
   m_Name: BlueDeathEffect
   m_TagString: Untagged
@@ -41,6 +42,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114146324479145502
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1518228245762286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d67d0ab45d01264899abbb04cdd202d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198161804149390996
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -101,7 +113,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 277424219
+  randomSeed: 178241341
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -191,7 +203,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.17647058, g: 0.25030443, b: 1, a: 1}
+      maxColor: {r: 0.32941177, g: 0.3647059, b: 1, a: 0.653}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -755,14 +767,32 @@ ParticleSystem:
         - serializedVersion: 2
           time: 0
           value: 1
-          inSlope: 0
-          outSlope: 0
+          inSlope: -0.83000576
+          outSlope: -0.83000576
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.24786371
+          value: 0.50258243
+          inSlope: 0.019389814
+          outSlope: 0.019389814
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.4972534
+          value: 1
+          inSlope: 0.0076159127
+          outSlope: 0.0076159127
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.76092386
+          value: 0.4980843
+          inSlope: -0.0023841858
+          outSlope: -0.0023841858
           tangentMode: 0
         - serializedVersion: 2
           time: 1
           value: 1
-          inSlope: 1
-          outSlope: 1
+          inSlope: 0
+          outSlope: 0
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -1003,10 +1033,10 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 1, g: 0, b: 0, a: 1}
-        key3: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 1, g: 1, b: 1, a: 0.5647059}
+        key1: {r: 1, g: 1, b: 1, a: 0.9372549}
+        key2: {r: 0.9117647, g: 0.31509513, b: 0.31509513, a: 0.8235294}
+        key3: {r: 0.11764705, g: 0.100346014, b: 0.100346014, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
@@ -2159,7 +2189,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   SizeBySpeedModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -2170,19 +2200,19 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 2
           time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 1
+          value: 1
+          inSlope: -1
+          outSlope: -1
           tangentMode: 0
         - serializedVersion: 2
           time: 1
-          value: 1
-          inSlope: 1
-          outSlope: 0
+          value: 0.48660278
+          inSlope: -1
+          outSlope: -1
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
       minCurve:
         serializedVersion: 2
         m_Curve:
@@ -2283,7 +2313,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    range: {x: 0, y: 1}
+    range: {x: 0, y: 10}
     separateAxes: 0
   RotationBySpeedModule:
     enabled: 0

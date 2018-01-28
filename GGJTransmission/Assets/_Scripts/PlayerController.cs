@@ -12,11 +12,14 @@ public class PlayerController : MonoBehaviour {
     private bool dashCD;
     private Vector3 dir;
 
+    private Animator anim;
+
     private Rigidbody rb;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -29,13 +32,35 @@ public class PlayerController : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis(horizontalJoystick);
-        float moveVertical = Input.GetAxis(verticalJoystick);
+        float moveHorizontal = Input.GetAxisRaw(horizontalJoystick);
+        float moveVertical = Input.GetAxisRaw(verticalJoystick);
 
-        dir = new Vector3(moveHorizontal, moveVertical, 0f);        
+        dir = new Vector3(moveHorizontal, moveVertical, 0f);
 
         transform.position += dir.normalized * moveSpeed * Time.fixedDeltaTime;
+
+        if (moveHorizontal > .9f)
+        {
+            anim.Play("RightMovement");
+        }
+        else if (moveVertical > .9f)
+        {
+            anim.Play("VerticalMovement");
+        }
+        else if (moveHorizontal < -.9f)
+        {
+            anim.Play("LeftMovement");
+        }
+        else if (moveVertical < -.9f)
+        {
+            anim.Play("VerticalMovement_Down");
+        }
+        else
+        {
+            anim.Play("Anim_Player1_Idle");
+        }
     }
+
 
     private void OnCollisionEnter(Collision collision)
     {
