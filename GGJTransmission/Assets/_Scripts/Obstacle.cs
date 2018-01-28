@@ -5,6 +5,7 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour {
 
     [SerializeField] private GameObject particles;
+    [SerializeField] private GameObject explosion;
 
     private bool dir;
     private float randPulse;
@@ -49,7 +50,7 @@ public class Obstacle : MonoBehaviour {
 
         if (collision.gameObject.tag == "Player") {
             GameObject.Find("GameManager").GetComponent<PlayerEnergyController>().Energy -= 10;
-            Instantiate(particles, transform.position, Quaternion.identity);
+            Instantiate(explosion, transform.position, Quaternion.identity);
             Camera.main.GetComponent<CameraController>().Shake(1f, 0.1f);
             
             Destroy(this.gameObject);

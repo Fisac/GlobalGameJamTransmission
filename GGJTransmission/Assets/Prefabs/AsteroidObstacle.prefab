@@ -190,3 +190,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 1545761932002876, guid: 0b348b606037f1545b834a81f22d56c8, type: 2}
+  explosion: {fileID: 1545761932002876, guid: 5fea3f52adc3ce1409ae771c2b73825e, type: 2}
